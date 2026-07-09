@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="popup-body">
+  <main class="app-shell">
+    <header class="header">
+      <div class="brand">
+        <img class="app-logo" src="assets/logo.png" alt="GMTB logo">
+        <h1>Ghibli Museum Ticket Buyer</h1>
+      </div>
+      <button id="lockPopup" class="icon-button" title="Keep this popup open">📌</button>
+    </header>
+
+    <div class="top-actions">
+      <button id="openPersonalInfo" class="primary personal-info-cta">Personal information page</button>
+    </div>
+
+    <section class="card" aria-labelledby="websiteTitle">
+      <h2 id="websiteTitle">Website</h2>
+
+      <label for="urlInput">Website address</label>
+      <input id="urlInput" type="text" placeholder="https://...">
+
+      <div class="row">
+        <button id="museumBtn" class="preset">Museum</button>
+        <button id="parkBtn" class="preset">Park</button>
+      </div>
+
+      <label for="tabCountInput">Number of tabs</label>
+      <input id="tabCountInput" type="number" min="1" max="104">
+      <div class="hint">Maximum: 104 tabs</div>
+
+      <button id="openTabs" class="primary">Open tabs</button>
+      <button id="closeTabs" class="danger">Close tabs</button>
+      <button id="deleteContainers" class="danger">Delete unused Ghibli containers</button>
+    </section>
+
+    <section class="card" aria-labelledby="queueTitle">
+      <h2 id="queueTitle">Queue positions</h2>
+      <div class="actions-row">
+        <button id="refreshPositions" class="secondary">Refresh</button>
+        <button id="focusBestQueue" class="secondary">Focus best queue</button>
+      </div>
+      <div id="positionsList" class="positions-list">No queue data yet.</div>
+    </section>
+
+    <section class="card" aria-labelledby="autoFillTitle">
+      <h2 id="autoFillTitle">Auto-fill</h2>
+
+
+      <button id="autoFillCurrentPage" class="primary">Auto-fill current page</button>
+      <button id="autoFillCustomerInfo" class="primary">Auto-fill Customer Information Registration</button>
+      <button id="autoFillPaymentInfo" class="primary">Auto-fill Payment / Applicant Information</button>
+      <button id="autoFillCreditCardInfo" class="primary">Auto-fill Credit Card Information</button>
+      <button id="assistNextButton" class="secondary">Next / Purchase assist</button>
+
+      <label class="checkbox-option">
+        <input id="autoFillEnabledInput" type="checkbox">
+        Automatically auto-fill supported pages
+      </label>
+
+      <label class="checkbox-option">
+        <input id="autoClickNextInput" type="checkbox">
+        Automatically click Next after highlight
+      </label>
+
+      <div id="currentPageStatus" class="status-line">Current page: Unknown</div>
+      <div id="autoFillStatus" class="status-line"></div>
+    </section>
+
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>
